@@ -1,33 +1,6 @@
-----------------------------------------------------------------------------------
--- Company: Politecnico di Milano
--- Engineer: Andrea Torti && Jonatan Sciaky
--- 
--- Create Date: 20.02.2023 14:18:59
--- Design Name: 
--- Module Name: main - archi
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
+
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
--- use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
--- library UNisIM;
--- use UNisIM.VComponents.all;
 
 ENTITY project_reti_logiche IS
     PORT (
@@ -47,57 +20,102 @@ ENTITY project_reti_logiche IS
     );
 END project_reti_logiche;
 
-ARCHITECTURE archi OF project_reti_logiche IS
 
+
+
+
+ARCHITECTURE structural OF project_reti_logiche IS
+
+    COMPONENT output_selector
+        PORT (
+            w : IN STD_LOGIC;
+            start : IN STD_LOGIC;
+            clk : IN STD_LOGIC;
+            rst : IN STD_LOGIC;
+            read_address_en : OUT STD_LOGIC;
+            out1 : OUT STD_LOGIC;
+            out2 : OUT STD_LOGIC
+        );
+    END COMPONENT;
+
+    COMPONENT mega_mux
+        PORT (
+            clk : IN STD_LOGIC;
+            rst : IN STD_LOGIC;
+            do : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+            out1 : IN STD_LOGIC;
+            out2 : IN STD_LOGIC;
+            z0 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+            z1 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+            z2 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+            z3 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+        );
+    END COMPONENT;
+
+    COMPONENT address_reader IS
+        PORT (
+            clk : IN STD_LOGIC;
+            rst : IN STD_LOGIC;
+            w : IN STD_LOGIC;
+            read_address_en : IN STD_LOGIC;
+            mem_addr : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+            done: OUT STD_LOGIC
+
+        );
+    END COMPONENT;
+
+    SIGNAL s_read_address_en : STD_LOGIC;
+    SIGNAL s_out1 : STD_LOGIC;
+    SIGNAL s_out2 : STD_LOGIC;
 BEGIN
-END archi;
 
--- entity two_bit_register_donesignal is
---     port (
---         start : in std_logic;
---         clk : in std_logic;
---         read_address_en : out std_logic
---     );
--- end two_bit_register_donesignal;
 
--- architecture behavioral of two_bit_register_donesignal is
---     type state_type is (A, B, C, D);
---     signal state : state_type;
---     begin
---     process (clk)
---         begin
---             IF (rising_edge(clk)) then
---                 case state is
 
---                     when a =>
---                         if start = '0' then
---                             state <= a;
---                         elsif start = '1' then
---                             state <= b;
---                         end IF;
---                     when b=>
---                         if start = '0' then
---                             state <= b;
---                         elsif start = '1' then
---                             state<=c;
---                         end IF;
---                     when c=>
---                         if start='0' then
---                             state<=A;
---                         elsif start='1' then  
---                             state<=D;
---                         end IF;
---                     when d=>
---                         IF start = '0' then
---                             state<=A;
---                         elsif start='1' then
---                             state<=D;
---                         end IF;
---                 end case;
---             end if;
---         end process;
---         read_address_en<= '1' when state=C ELSE '0';
--- end behavioral;
+    output_selector_0 : output_selector
+        PORT MAP (
+            w => i_w,
+            start => i_start,
+            clk => i_clk,
+            rst => i_rst,
+            read_address_en => s_read_address_en,
+            out1 => s_out1,
+            out2 => s_out2
+        );
+
+    mega_mux_0 : mega_mux
+        PORT MAP (
+            clk => i_clk,
+            rst => i_rst,
+            do => i_mem_data,
+            out1 => s_out1,
+            out2 => s_out2,
+            z0 => o_z0,
+            z1 => o_z1,
+            z2 => o_z2,
+            z3 => o_z3
+        );
+
+    address_reader_0 : address_reader
+        PORT MAP (
+            clk => i_clk,
+            rst => i_rst,
+            w => i_w,
+            read_address_en => s_read_address_en,
+            mem_addr => o_mem_addr,
+            done => o_done
+        );
+
+
+   
+
+END structural;
+
+
+
+
+
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
 
 ENTITY output_selector IS
     PORT (
@@ -161,6 +179,9 @@ BEGIN
         '0';
 END behavioral;
 
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+
 ENTITY mega_mux IS
     PORT (
         clk : IN STD_LOGIC;
@@ -168,10 +189,10 @@ ENTITY mega_mux IS
         do : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         out1 : IN STD_LOGIC;
         out2 : IN STD_LOGIC;
-        o_z0 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-        o_z1 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-        o_z2 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-        o_z3 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+        z0 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        z2 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        z1 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        z3 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
     );
 END mega_mux;
 
@@ -180,50 +201,144 @@ BEGIN
     PROCESS (clk, rst)
     BEGIN
         IF (rst = '1') THEN
-            o_z0 <= (OTHERS => '0');
-            o_z1 <= (OTHERS => '0');
-            o_z2 <= (OTHERS => '0');
-            o_z3 <= (OTHERS => '0');
+            z0 <= (OTHERS => '0');
+            z1 <= (OTHERS => '0');
+            z2 <= (OTHERS => '0');
+            z3 <= (OTHERS => '0');
 
         ELSIF (rising_edge(clk)) THEN
             IF (out1 = '0' AND out2 = '0') THEN
-                o_z0 <= do;
-                o_z1 <= o_z1;
-                o_z2 <= o_z2;
-                o_z3 <= o_z3;
+                z0 <= do;
+                z1 <= z1;
+                z2 <= z2;
+                z3 <= z3;
             ELSIF (out1 = '0' AND out2 = '1') THEN
-                o_z0 <= o_z0;
-                o_z1 <= do;
-                o_z2 <= o_z2;
-                o_z3 <= o_z3;
+                z0 <= z0;
+                z1 <= do;
+                z2 <= z2;
+                z3 <= z3;
             ELSIF (out1 = '1' AND out2 = '0') THEN
-                o_z0 <= o_z0;
-                o_z1 <= o_z1;
-                o_z2 <= do;
-                o_z3 <= o_z3;
+                z0 <= z0;
+                z1 <= z1;
+                z2 <= do;
+                z3 <= z3;
             ELSIF (out1 = '1' AND out2 = '1') THEN
-                o_z0 <= o_z0;
-                o_z1 <= o_z1;
-                o_z2 <= o_z2;
-                o_z3 <= do;
+                z0 <= z0;
+                z1 <= z1;
+                z2 <= z2;
+                z3 <= do;
             END IF;
         END IF;
     END PROCESS;
 END behavioral;
 
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+
 ENTITY address_reader IS
     PORT (
-        clk: IN STD_LOGIC;
-        rst: IN STD_LOGIC;
+        clk : IN STD_LOGIC;
+        rst : IN STD_LOGIC;
         w : IN STD_LOGIC;
         read_address_en : IN STD_LOGIC;
         address : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
         en : OUT STD_LOGIC;
-        done: OUT STD_LOGIC
+        done : OUT STD_LOGIC
     );
 END address_reader;
 
--- scrivere architecture behavioral di address_reader
+ARCHITECTURE behavioral OF address_reader IS
+BEGIN
+    PROCESS (clk, rst)
+    BEGIN
+        IF (rst = '1' OR rising_edge(read_address_en) OR done = '1') THEN
+            address <= (OTHERS => '0');
+            en <= '0';
+            done <= '0';
+        ELSIF (rising_edge(clk) AND done = '0') THEN
+            IF (read_address_en = '1' AND en = '0') THEN
+                address <= address(address'HIGH - 1 DOWNTO address'LOW) & w;
+                en <= '0';
+                done <= '0';
+            ELSIF (read_address_en = '0' AND en = '0') THEN
+                address <= address;
+                en <= '1';
+                done <= '0';
+            ELSIF (read_address_en = '0' AND en = '1') THEN
+                en <= '0';
+                address <= (OTHERS => '0');
+                done <= '1';
+            END IF;
+        END IF;
+    END PROCESS;
+END behavioral;
+
+----------------------------------------------------------------------------------
+-- Company: Politecnico di Milano
+-- Engineer: Andrea Torti && Jonatan Sciaky
+-- 
+-- Create Date: 20.02.2023 14:18:59
+-- Design Name: 
+-- Module Name: main - archi
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+-- 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
+-- entity two_bit_register_donesignal is
+--     port (
+--         start : in std_logic;
+--         clk : in std_logic;
+--         read_address_en : out std_logic
+--     );
+-- end two_bit_register_donesignal;
+
+-- architecture behavioral of two_bit_register_donesignal is
+--     type state_type is (A, B, C, D);
+--     signal state : state_type;
+--     begin
+--     process (clk)
+--         begin
+--             IF (rising_edge(clk)) then
+--                 case state is
+
+--                     when a =>
+--                         if start = '0' then
+--                             state <= a;
+--                         elsif start = '1' then
+--                             state <= b;
+--                         end IF;
+--                     when b=>
+--                         if start = '0' then
+--                             state <= b;
+--                         elsif start = '1' then
+--                             state<=c;
+--                         end IF;
+--                     when c=>
+--                         if start='0' then
+--                             state<=A;
+--                         elsif start='1' then  
+--                             state<=D;
+--                         end IF;
+--                     when d=>
+--                         IF start = '0' then
+--                             state<=A;
+--                         elsif start='1' then
+--                             state<=D;
+--                         end IF;
+--                 end case;
+--             end if;
+--         end process;
+--         read_address_en<= '1' when state=C ELSE '0';
+-- end behavioral;
 
 -- architecture Structural of two_bit_register_donesignal is
 --     COMPONENT FFD is
@@ -264,32 +379,11 @@ END address_reader;
 --     END PROCESS;
 -- END behavioral;
 
-ENTITY rams_sp_wf IS
-    PORT (
-        clk : IN STD_LOGIC;
-        we : IN STD_LOGIC;
-        en : IN STD_LOGIC;
-        addr : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        di : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        do : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
-    );
-END rams_sp_wf;
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+-- use IEEE.NUMERIC_STD.ALL;
 
-ARCHITECTURE syn OF rams_sp_wf IS
-    TYPE ram_type IS ARRAY (65535 DOWNTO 0) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL RAM : ram_type;
-BEGIN
-    PROCESS (clk)
-    BEGIN
-        IF clk'event AND clk = '1' THEN
-            IF en = '1' THEN
-                IF we = '1' THEN
-                    RAM(conv_integer(addr)) <= di;
-                    do <= di AFTER 2 ns;
-                ELSE
-                    do <= RAM(conv_integer(addr)) AFTER 2 ns;
-                END IF;
-            END IF;
-        END IF;
-    END PROCESS;
-END syn;
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+-- library UNisIM;
+-- use UNisIM.VComponents.all;
