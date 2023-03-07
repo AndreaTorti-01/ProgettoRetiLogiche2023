@@ -44,7 +44,8 @@ ARCHITECTURE structural OF project_reti_logiche IS
             z0 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
             z1 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
             z2 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-            z3 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+            z3 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+            start : IN STD_LOGIC
         );
     END COMPONENT;
 
@@ -54,15 +55,24 @@ ARCHITECTURE structural OF project_reti_logiche IS
             rst : IN STD_LOGIC;
             w : IN STD_LOGIC;
             read_address_en : IN STD_LOGIC;
-            address : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-            done : OUT STD_LOGIC
+            address : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
+            en : OUT STD_LOGIC
+        );
+    END COMPONENT;
 
+    COMPONENT delayed_fsm IS
+        PORT (
+            clk : IN STD_LOGIC;
+            reset : IN STD_LOGIC;
+            input : IN STD_LOGIC;
+            output : OUT STD_LOGIC
         );
     END COMPONENT;
 
     SIGNAL s_read_address_en : STD_LOGIC;
     SIGNAL s_out1 : STD_LOGIC;
     SIGNAL s_out2 : STD_LOGIC;
+    SIGNAL s_en : STD_LOGIC;
 BEGIN
 
     output_selector_0 : output_selector
@@ -86,7 +96,8 @@ BEGIN
         z0 => o_z0,
         z1 => o_z1,
         z2 => o_z2,
-        z3 => o_z3
+        z3 => o_z3,
+        start => i_start
     );
 
     address_reader_0 : address_reader
@@ -94,10 +105,20 @@ BEGIN
         clk => i_clk,
         rst => i_rst,
         w => i_w,
+        en => s_en,
         read_address_en => s_read_address_en,
-        address => o_mem_addr,
-        done => o_done
+        address => o_mem_addr
     );
+
+    delayed_fsm_0 : delayed_fsm
+    PORT MAP(
+        clk => i_clk,
+        reset => i_rst,
+        input => s_en,
+        output => o_done
+    );
+
+    o_mem_en <= s_en;
 END structural;
 
 LIBRARY IEEE;
@@ -182,15 +203,17 @@ ENTITY mega_mux IS
         z0 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
         z2 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
         z1 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-        z3 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+        z3 : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        start : IN STD_LOGIC
     );
 END mega_mux;
 
 ARCHITECTURE behavioral OF mega_mux IS
-    SIGNAL t_z0 : STD_LOGIC_VECTOR (7 DOWNTO 0); -- per jon: se no dove cavolo salvare i valori da mantenere di z0, z1, z2, z3...
-    SIGNAL t_z1 : STD_LOGIC_VECTOR (7 DOWNTO 0); -- mostra replace in selection
+    SIGNAL t_z0 : STD_LOGIC_VECTOR (7 DOWNTO 0);
+    SIGNAL t_z1 : STD_LOGIC_VECTOR (7 DOWNTO 0);
     SIGNAL t_z2 : STD_LOGIC_VECTOR (7 DOWNTO 0);
     SIGNAL t_z3 : STD_LOGIC_VECTOR (7 DOWNTO 0);
+    SIGNAL proc_flag : STD_LOGIC;
 BEGIN
     PROCESS (clk, rst)
     BEGIN
@@ -199,8 +222,12 @@ BEGIN
             t_z1 <= (OTHERS => '0');
             t_z2 <= (OTHERS => '0');
             t_z3 <= (OTHERS => '0');
-
-        ELSIF (rising_edge(clk)) THEN
+            proc_flag <= '0';
+        END IF;
+        IF (start = '1') THEN
+            proc_flag <= '1';
+        END IF;
+        IF (rising_edge(clk) AND proc_flag = '1' AND rst = '0') THEN
             IF (out1 = '0' AND out2 = '0') THEN
                 t_z0 <= do;
                 t_z1 <= t_z1;
@@ -240,43 +267,90 @@ ENTITY address_reader IS
         w : IN STD_LOGIC;
         read_address_en : IN STD_LOGIC;
         address : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
-        en : OUT STD_LOGIC;
-        done : OUT STD_LOGIC
+        en : OUT STD_LOGIC
     );
 END address_reader;
 
 ARCHITECTURE behavioral OF address_reader IS
     SIGNAL t_address : STD_LOGIC_VECTOR (15 DOWNTO 0);
     SIGNAL t_en : STD_LOGIC;
-    SIGNAL t_done : STD_LOGIC;
 BEGIN
     PROCESS (clk, rst)
     BEGIN
-        IF (rst = '1' OR rising_edge(read_address_en) OR t_done = '1') THEN
-            t_address <= (OTHERS => '0');
+        IF (rst = '1' OR rising_edge(read_address_en)) THEN
             t_en <= '0';
-            t_done <= '0';
-        ELSIF (rising_edge(clk) AND t_done = '0') THEN
+            t_address <= (OTHERS => '0');
+        ELSIF (rising_edge(clk)) THEN
             IF (read_address_en = '1' AND t_en = '0') THEN
                 t_address <= t_address(t_address'HIGH - 1 DOWNTO t_address'LOW) & w;
                 t_en <= '0';
-                t_done <= '0';
             ELSIF (read_address_en = '0' AND t_en = '0') THEN
                 t_address <= t_address;
                 t_en <= '1';
-                t_done <= '0';
             ELSIF (read_address_en = '0' AND t_en = '1') THEN
                 t_en <= '0';
                 t_address <= (OTHERS => '0');
-                t_done <= '1';
             END IF;
         END IF;
         address <= t_address;
         en <= t_en;
-        done <= t_done;
     END PROCESS;
 END behavioral;
 
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+
+ENTITY delayed_fsm IS
+    PORT (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        input : IN STD_LOGIC;
+        output : OUT STD_LOGIC
+    );
+END ENTITY delayed_fsm;
+
+ARCHITECTURE Behavioral OF delayed_fsm IS
+
+    -- Define the states
+    TYPE state_type IS (s0, s1, s2);
+    SIGNAL current_state, next_state : state_type;
+
+    -- Define a two-element array to hold the output delay
+    TYPE delay_type IS ARRAY (0 TO 1) OF STD_LOGIC;
+    SIGNAL delay_reg : delay_type := (OTHERS => '0');
+
+BEGIN
+
+    -- Define the state transition logic
+    PROCESS (clk, reset)
+    BEGIN
+        IF reset = '1' THEN
+            current_state <= s0;
+        ELSIF rising_edge(clk) THEN
+            current_state <= next_state;
+        END IF;
+    END PROCESS;
+
+    -- Define the output logic
+    PROCESS (current_state, input, delay_reg)
+    BEGIN
+        CASE current_state IS
+            WHEN s0 =>
+                next_state <= s1;
+                delay_reg <= (input, delay_reg(0));
+                output <= '0';
+            WHEN s1 =>
+                next_state <= s2;
+                delay_reg <= (input, delay_reg(0));
+                output <= '0';
+            WHEN s2 =>
+                next_state <= s0;
+                delay_reg <= (input, delay_reg(0));
+                output <= delay_reg(1);
+        END CASE;
+    END PROCESS;
+
+END ARCHITECTURE Behavioral;
 ----------------------------------------------------------------------------------
 -- Company: Politecnico di Milano
 -- Engineer: Andrea Torti && Jonatan Sciaky

@@ -16,6 +16,7 @@ Compiling package ieee.std_logic_unsigned
 Compiling architecture behavioral of entity xil_defaultlib.output_selector [output_selector_default]
 Compiling architecture behavioral of entity xil_defaultlib.mega_mux [mega_mux_default]
 Compiling architecture behavioral of entity xil_defaultlib.address_reader [address_reader_default]
+Compiling architecture behavioral of entity xil_defaultlib.delayed_fsm [delayed_fsm_default]
 Compiling architecture structural of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
 Compiling architecture projecttb of entity xil_defaultlib.project_tb
 Built simulation snapshot project_tb_behav
