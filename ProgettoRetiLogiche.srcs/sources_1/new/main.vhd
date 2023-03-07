@@ -20,10 +20,6 @@ ENTITY project_reti_logiche IS
     );
 END project_reti_logiche;
 
-
-
-
-
 ARCHITECTURE structural OF project_reti_logiche IS
 
     COMPONENT output_selector
@@ -58,8 +54,8 @@ ARCHITECTURE structural OF project_reti_logiche IS
             rst : IN STD_LOGIC;
             w : IN STD_LOGIC;
             read_address_en : IN STD_LOGIC;
-            mem_addr : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-            done: OUT STD_LOGIC
+            address : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+            done : OUT STD_LOGIC
 
         );
     END COMPONENT;
@@ -69,50 +65,40 @@ ARCHITECTURE structural OF project_reti_logiche IS
     SIGNAL s_out2 : STD_LOGIC;
 BEGIN
 
-
-
     output_selector_0 : output_selector
-        PORT MAP (
-            w => i_w,
-            start => i_start,
-            clk => i_clk,
-            rst => i_rst,
-            read_address_en => s_read_address_en,
-            out1 => s_out1,
-            out2 => s_out2
-        );
+    PORT MAP(
+        w => i_w,
+        start => i_start,
+        clk => i_clk,
+        rst => i_rst,
+        read_address_en => s_read_address_en,
+        out1 => s_out1,
+        out2 => s_out2
+    );
 
     mega_mux_0 : mega_mux
-        PORT MAP (
-            clk => i_clk,
-            rst => i_rst,
-            do => i_mem_data,
-            out1 => s_out1,
-            out2 => s_out2,
-            z0 => o_z0,
-            z1 => o_z1,
-            z2 => o_z2,
-            z3 => o_z3
-        );
+    PORT MAP(
+        clk => i_clk,
+        rst => i_rst,
+        do => i_mem_data,
+        out1 => s_out1,
+        out2 => s_out2,
+        z0 => o_z0,
+        z1 => o_z1,
+        z2 => o_z2,
+        z3 => o_z3
+    );
 
     address_reader_0 : address_reader
-        PORT MAP (
-            clk => i_clk,
-            rst => i_rst,
-            w => i_w,
-            read_address_en => s_read_address_en,
-            mem_addr => o_mem_addr,
-            done => o_done
-        );
-
-
-   
-
+    PORT MAP(
+        clk => i_clk,
+        rst => i_rst,
+        w => i_w,
+        read_address_en => s_read_address_en,
+        address => o_mem_addr,
+        done => o_done
+    );
 END structural;
-
-
-
-
 
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
@@ -132,48 +118,52 @@ END output_selector;
 ARCHITECTURE behavioral OF output_selector IS
     TYPE state_type IS (a, b, c);
     SIGNAL state : state_type;
+    SIGNAL t_out1 : STD_LOGIC;
+    SIGNAL t_out2 : STD_LOGIC;
 BEGIN
     PROCESS (clk, rst)
     BEGIN
         IF (rst = '1') THEN
             state <= A;
-            out1 <= '0';
-            out2 <= '0';
+            t_out1 <= '0';
+            t_out2 <= '0';
         ELSIF (rising_edge(clk)) THEN
             CASE state IS
 
                 WHEN a =>
                     IF start = '0' THEN
                         state <= a;
-                        out1 <= out1;
-                        out2 <= out2;
+                        t_out1 <= t_out1;
+                        t_out2 <= t_out2;
                     ELSIF start = '1' THEN
                         state <= b;
-                        out1 <= w;
-                        out2 <= out2;
+                        t_out1 <= w;
+                        t_out2 <= t_out2;
                     END IF;
                 WHEN b =>
                     IF start = '0' THEN
                         state <= b;
-                        out1 <= out1;
-                        out2 <= out2;
+                        t_out1 <= t_out1;
+                        t_out2 <= t_out2;
                     ELSIF start = '1' THEN
                         state <= c;
-                        out1 <= out1;
-                        out2 <= w;
+                        t_out1 <= t_out1;
+                        t_out2 <= w;
                     END IF;
                 WHEN c =>
                     IF start = '0' THEN
                         state <= a;
-                        out1 <= out1;
-                        out2 <= out2;
+                        t_out1 <= t_out1;
+                        t_out2 <= t_out2;
                     ELSIF start = '1' THEN
                         state <= c;
-                        out1 <= out1;
-                        out2 <= out2;
+                        t_out1 <= t_out1;
+                        t_out2 <= t_out2;
                     END IF;
             END CASE;
         END IF;
+        out1 <= t_out1;
+        out2 <= t_out2;
     END PROCESS;
     read_address_en <= '1' WHEN state = c ELSE
         '0';
@@ -197,38 +187,46 @@ ENTITY mega_mux IS
 END mega_mux;
 
 ARCHITECTURE behavioral OF mega_mux IS
+    SIGNAL t_z0 : STD_LOGIC_VECTOR (7 DOWNTO 0); -- per jon: se no dove cavolo salvare i valori da mantenere di z0, z1, z2, z3...
+    SIGNAL t_z1 : STD_LOGIC_VECTOR (7 DOWNTO 0); -- mostra replace in selection
+    SIGNAL t_z2 : STD_LOGIC_VECTOR (7 DOWNTO 0);
+    SIGNAL t_z3 : STD_LOGIC_VECTOR (7 DOWNTO 0);
 BEGIN
     PROCESS (clk, rst)
     BEGIN
         IF (rst = '1') THEN
-            z0 <= (OTHERS => '0');
-            z1 <= (OTHERS => '0');
-            z2 <= (OTHERS => '0');
-            z3 <= (OTHERS => '0');
+            t_z0 <= (OTHERS => '0');
+            t_z1 <= (OTHERS => '0');
+            t_z2 <= (OTHERS => '0');
+            t_z3 <= (OTHERS => '0');
 
         ELSIF (rising_edge(clk)) THEN
             IF (out1 = '0' AND out2 = '0') THEN
-                z0 <= do;
-                z1 <= z1;
-                z2 <= z2;
-                z3 <= z3;
+                t_z0 <= do;
+                t_z1 <= t_z1;
+                t_z2 <= t_z2;
+                t_z3 <= t_z3;
             ELSIF (out1 = '0' AND out2 = '1') THEN
-                z0 <= z0;
-                z1 <= do;
-                z2 <= z2;
-                z3 <= z3;
+                t_z0 <= t_z0;
+                t_z1 <= do;
+                t_z2 <= t_z2;
+                t_z3 <= t_z3;
             ELSIF (out1 = '1' AND out2 = '0') THEN
-                z0 <= z0;
-                z1 <= z1;
-                z2 <= do;
-                z3 <= z3;
+                t_z0 <= t_z0;
+                t_z1 <= t_z1;
+                t_z2 <= do;
+                t_z3 <= t_z3;
             ELSIF (out1 = '1' AND out2 = '1') THEN
-                z0 <= z0;
-                z1 <= z1;
-                z2 <= z2;
-                z3 <= do;
+                t_z0 <= t_z0;
+                t_z1 <= t_z1;
+                t_z2 <= t_z2;
+                t_z3 <= do;
             END IF;
         END IF;
+        z0 <= t_z0;
+        z1 <= t_z1;
+        z2 <= t_z2;
+        z3 <= t_z3;
     END PROCESS;
 END behavioral;
 
@@ -248,28 +246,34 @@ ENTITY address_reader IS
 END address_reader;
 
 ARCHITECTURE behavioral OF address_reader IS
+    SIGNAL t_address : STD_LOGIC_VECTOR (15 DOWNTO 0);
+    SIGNAL t_en : STD_LOGIC;
+    SIGNAL t_done : STD_LOGIC;
 BEGIN
     PROCESS (clk, rst)
     BEGIN
-        IF (rst = '1' OR rising_edge(read_address_en) OR done = '1') THEN
-            address <= (OTHERS => '0');
-            en <= '0';
-            done <= '0';
-        ELSIF (rising_edge(clk) AND done = '0') THEN
-            IF (read_address_en = '1' AND en = '0') THEN
-                address <= address(address'HIGH - 1 DOWNTO address'LOW) & w;
-                en <= '0';
-                done <= '0';
-            ELSIF (read_address_en = '0' AND en = '0') THEN
-                address <= address;
-                en <= '1';
-                done <= '0';
-            ELSIF (read_address_en = '0' AND en = '1') THEN
-                en <= '0';
-                address <= (OTHERS => '0');
-                done <= '1';
+        IF (rst = '1' OR rising_edge(read_address_en) OR t_done = '1') THEN
+            t_address <= (OTHERS => '0');
+            t_en <= '0';
+            t_done <= '0';
+        ELSIF (rising_edge(clk) AND t_done = '0') THEN
+            IF (read_address_en = '1' AND t_en = '0') THEN
+                t_address <= t_address(t_address'HIGH - 1 DOWNTO t_address'LOW) & w;
+                t_en <= '0';
+                t_done <= '0';
+            ELSIF (read_address_en = '0' AND t_en = '0') THEN
+                t_address <= t_address;
+                t_en <= '1';
+                t_done <= '0';
+            ELSIF (read_address_en = '0' AND t_en = '1') THEN
+                t_en <= '0';
+                t_address <= (OTHERS => '0');
+                t_done <= '1';
             END IF;
         END IF;
+        address <= t_address;
+        en <= t_en;
+        done <= t_done;
     END PROCESS;
 END behavioral;
 
