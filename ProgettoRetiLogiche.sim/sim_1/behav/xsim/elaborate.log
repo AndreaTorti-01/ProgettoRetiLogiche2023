@@ -13,11 +13,10 @@ Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
-Compiling architecture behavioral of entity xil_defaultlib.output_selector [output_selector_default]
+Compiling architecture behavioral of entity xil_defaultlib.signal_generator [signal_generator_default]
+Compiling architecture behavioral of entity xil_defaultlib.serial_to_parallel [\serial_to_parallel(n=2)\]
+Compiling architecture behavioral of entity xil_defaultlib.serial_to_parallel [\serial_to_parallel(n=16)\]
 Compiling architecture behavioral of entity xil_defaultlib.mega_mux [mega_mux_default]
-Compiling architecture behavioral of entity xil_defaultlib.address_reader [address_reader_default]
-Compiling architecture behavioral of entity xil_defaultlib.done_generator [done_generator_default]
-Compiling architecture behavioral of entity xil_defaultlib.two_cycles_delay [two_cycles_delay_default]
 Compiling architecture structural of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
 Compiling architecture projecttb of entity xil_defaultlib.project_tb
 Built simulation snapshot project_tb_behav
