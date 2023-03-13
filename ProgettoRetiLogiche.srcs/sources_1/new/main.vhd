@@ -38,6 +38,7 @@ ARCHITECTURE structural OF project_reti_logiche IS
         GENERIC (N : INTEGER);
         PORT (
             clk : IN STD_LOGIC;
+            enable_clk : IN STD_LOGIC;
             rst : IN STD_LOGIC;
             done : IN STD_LOGIC;
             input : IN STD_LOGIC;
@@ -48,6 +49,7 @@ ARCHITECTURE structural OF project_reti_logiche IS
     COMPONENT mega_mux IS
         PORT (
             clk : IN STD_LOGIC;
+            enable_clk : IN STD_LOGIC;
             rst : IN STD_LOGIC;
             done : IN STD_LOGIC;
             do : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -82,7 +84,8 @@ BEGIN
     serial_to_parallel_port : serial_to_parallel
     GENERIC MAP(n => 2)
     PORT MAP(
-        clk => s_clk_read_output,
+        clk => i_clk,
+        enable_clk => s_clk_read_output,
         rst => i_rst,
         done => s_clk_done,
         input => i_w,
@@ -93,7 +96,8 @@ BEGIN
     serial_to_parallel_address : serial_to_parallel
     GENERIC MAP(n => 16)
     PORT MAP(
-        clk => s_clk_read_address,
+        clk => i_clk,
+        enable_clk => s_clk_read_address,
         rst => i_rst,
         done => s_clk_done,
         input => i_w,
@@ -102,7 +106,8 @@ BEGIN
 
     mega_mux_0 : mega_mux
     PORT MAP(
-        clk => s_clk_mega_mux,
+        clk => i_clk,
+        enable_clk => s_clk_mega_mux,
         rst => i_rst,
         done => s_clk_done,
         do => i_mem_data,
@@ -136,7 +141,7 @@ ARCHITECTURE behavioral OF signal_generator IS
     TYPE state_type IS (a, b, c, clk_wait, d, e);
     SIGNAL state : state_type;
 BEGIN
-    PROCESS (clk, rst)
+    PROCESS (clk, rst, start) IS
         VARIABLE v_clk_read_output : STD_LOGIC;
         VARIABLE v_clk_read_address : STD_LOGIC;
         VARIABLE v_clk_done : STD_LOGIC;
@@ -149,8 +154,9 @@ BEGIN
             v_clk_read_address := '0';
             v_clk_done := '0';
             v_clk_en := '0';
+            v_clk_mega_mux := '0';
 
-        ELSIF (rising_edge(clk)) THEN
+        ELSIF (falling_edge(clk)) THEN
             CASE state IS
                 WHEN a =>
                     v_clk_done := '0';
@@ -186,10 +192,10 @@ BEGIN
             END CASE;
         END IF;
         clk_en <= v_clk_en;
-        clk_read_output <= v_clk_read_output AND clk;
-        clk_read_address <= v_clk_read_address AND clk;
-        clk_done <= v_clk_done AND clk;
-        clk_mega_mux <= v_clk_mega_mux AND clk;
+        clk_read_output <= v_clk_read_output;
+        clk_read_address <= v_clk_read_address;
+        clk_done <= v_clk_done;
+        clk_mega_mux <= v_clk_mega_mux;
     END PROCESS;
 END behavioral;
 LIBRARY ieee;
@@ -201,6 +207,7 @@ ENTITY serial_to_parallel IS
     );
     PORT (
         clk : IN STD_LOGIC;
+        enable_clk : IN STD_LOGIC;
         rst : IN STD_LOGIC;
         done : IN STD_LOGIC;
         input : IN STD_LOGIC;
@@ -211,12 +218,12 @@ END serial_to_parallel;
 ARCHITECTURE behavioral OF serial_to_parallel IS
     SIGNAL t_output : STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
 BEGIN
-    PROCESS (clk, rst, done)
+    PROCESS (clk, rst, done, input, enable_clk) IS
     BEGIN
         IF (rst = '1' OR done = '1') THEN
             t_output <= (OTHERS => '0');
             output <= (OTHERS => '0');
-        ELSIF (rising_edge(clk)) THEN
+        ELSIF (rising_edge(clk) AND enable_clk = '1') THEN
             t_output <= t_output (N - 2 DOWNTO 0) & input;
             output <= t_output (N - 2 DOWNTO 0) & input;
         END IF;
@@ -230,6 +237,7 @@ USE IEEE.std_logic_1164.ALL;
 ENTITY mega_mux IS
     PORT (
         clk : IN STD_LOGIC;
+        enable_clk : IN STD_LOGIC;
         rst : IN STD_LOGIC;
         done : IN STD_LOGIC;
         do : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -247,7 +255,7 @@ ARCHITECTURE behavioral OF mega_mux IS
     SIGNAL t_z2 : STD_LOGIC_VECTOR (7 DOWNTO 0);
     SIGNAL t_z3 : STD_LOGIC_VECTOR (7 DOWNTO 0);
 BEGIN
-    PROCESS (clk, rst, done)
+    PROCESS (clk, rst, done, do, out_port) IS
     BEGIN
         IF (rst = '1') THEN
             z0 <= (OTHERS => '0');
@@ -258,7 +266,7 @@ BEGIN
             t_z1 <= (OTHERS => '0');
             t_z2 <= (OTHERS => '0');
             t_z3 <= (OTHERS => '0');
-        ELSIF (rising_edge(clk)) THEN
+        ELSIF (rising_edge(clk) AND enable_clk = '1') THEN
             CASE out_port IS
                 WHEN "00" =>
                     t_z0 <= do;
@@ -271,13 +279,12 @@ BEGIN
                 WHEN OTHERS => NULL;
             END CASE;
         END IF;
-        IF (rising_edge(done)) THEN
+        IF (done = '1') THEN
             z0 <= t_z0;
             z1 <= t_z1;
             z2 <= t_z2;
             z3 <= t_z3;
-        END IF;
-        IF (falling_edge(done)) THEN
+        ELSE
             z0 <= (OTHERS => '0');
             z1 <= (OTHERS => '0');
             z2 <= (OTHERS => '0');

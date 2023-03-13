@@ -1,0 +1,13 @@
+Time resolution is 1 ps
+Failure: TEST FALLITO (Z2 ---) found 0
+Time: 1303346 ps  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche.srcs/sim_1/imports/Desktop/tb_example23.vhd
+$finish called at time : 1303346 ps : File "C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche.srcs/sim_1/imports/Desktop/tb_example23.vhd" Line 138
+Failure: TEST FALLITO (Z1 ---) found 0
+Time: 3803346 ps  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche.srcs/sim_1/imports/Desktop/tb_example23.vhd
+$finish called at time : 3803346 ps : File "C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche.srcs/sim_1/imports/Desktop/tb_example23.vhd" Line 150
+Failure: TEST FALLITO (Z2 ---) found 0
+Time: 3803346 ps  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche.srcs/sim_1/imports/Desktop/tb_example23.vhd
+$finish called at time : 3803346 ps : File "C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche.srcs/sim_1/imports/Desktop/tb_example23.vhd" Line 151
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 3803346 ps  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche.srcs/sim_1/imports/Desktop/tb_example23.vhd
+$finish called at time : 3803346 ps : File "C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche.srcs/sim_1/imports/Desktop/tb_example23.vhd" Line 153

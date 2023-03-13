@@ -1,0 +1,1189 @@
+(DELAYFILE 
+(SDFVERSION "3.0" )
+(DESIGN "project_reti_logiche")
+(DATE "Mon Mar 13 21:38:40 2023")
+(VENDOR "XILINX")
+(PROGRAM "Vivado")
+(VERSION "2022.2.2")
+(DIVIDER /)
+(TIMESCALE 1ps)
+(CELL 
+  (CELLTYPE "BUFG")
+  (INSTANCE i_clk_IBUF_BUFG_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (113.0:120.0:120.0) (113.0:120.0:120.0))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "IBUF")
+  (INSTANCE i_clk_IBUF_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (753.9:829.8:829.8) (753.9:829.8:829.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "IBUF")
+  (INSTANCE i_rst_IBUF_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (753.9:829.8:829.8) (753.9:829.8:829.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "IBUF")
+  (INSTANCE i_start_IBUF_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (753.9:829.8:829.8) (753.9:829.8:829.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "IBUF")
+  (INSTANCE i_w_IBUF_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (753.9:829.8:829.8) (753.9:829.8:829.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_done_OBUF_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[0\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[10\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[11\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[12\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[13\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[14\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[15\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[1\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[2\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[3\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[4\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[5\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[6\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[7\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[8\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_addr_OBUF\[9\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_en_OBUF_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_mem_we_OBUF_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z0_OBUF\[0\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z0_OBUF\[1\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z0_OBUF\[2\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z0_OBUF\[3\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z0_OBUF\[4\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z0_OBUF\[5\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z0_OBUF\[6\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z0_OBUF\[7\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z1_OBUF\[0\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z1_OBUF\[1\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z1_OBUF\[2\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z1_OBUF\[3\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z1_OBUF\[4\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z1_OBUF\[5\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z1_OBUF\[6\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z1_OBUF\[7\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z2_OBUF\[0\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z2_OBUF\[1\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z2_OBUF\[2\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z2_OBUF\[3\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z2_OBUF\[4\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z2_OBUF\[5\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z2_OBUF\[6\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z2_OBUF\[7\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z3_OBUF\[0\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z3_OBUF\[1\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z3_OBUF\[2\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z3_OBUF\[3\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z3_OBUF\[4\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z3_OBUF\[5\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z3_OBUF\[6\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE o_z3_OBUF\[7\]_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2218.9:2461.8:2461.8) (2218.9:2461.8:2461.8))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[0\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[10\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[11\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[12\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[13\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[14\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[15\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[1\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[2\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[3\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[4\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[5\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[6\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[7\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[8\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE serial_to_parallel_address/t_output_reg\[9\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "LUT4")
+  (INSTANCE signal_generator0/FSM_sequential_state\[0\]_i_1)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I3 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+      (IOPATH I2 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+      (IOPATH I1 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+      (IOPATH I0 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "LUT4")
+  (INSTANCE signal_generator0/FSM_sequential_state\[1\]_i_1)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I3 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+      (IOPATH I2 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+      (IOPATH I1 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+      (IOPATH I0 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "LUT3")
+  (INSTANCE signal_generator0/FSM_sequential_state\[2\]_i_1)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I2 O (45.0:56.0:56.0) (45.0:56.0:56.0))
+      (IOPATH I1 O (52.0:65.0:65.0) (52.0:65.0:65.0))
+      (IOPATH I0 O (54.0:67.0:67.0) (54.0:67.0:67.0))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE signal_generator0/FSM_sequential_state_reg\[0\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE signal_generator0/FSM_sequential_state_reg\[1\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE signal_generator0/FSM_sequential_state_reg\[2\])
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "LUT4")
+  (INSTANCE signal_generator0/__1\/i_)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I3 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+      (IOPATH I2 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+      (IOPATH I1 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+      (IOPATH I0 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "LUT2")
+  (INSTANCE signal_generator0/o_done_OBUF_inst_i_1)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I1 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+      (IOPATH I0 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "LUT2")
+  (INSTANCE signal_generator0/t_output\[15\]_i_1)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I1 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+      (IOPATH I0 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "LUT3")
+  (INSTANCE signal_generator0/t_output\[15\]_i_2)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I2 O (45.0:56.0:56.0) (45.0:56.0:56.0))
+      (IOPATH I1 O (52.0:65.0:65.0) (52.0:65.0:65.0))
+      (IOPATH I0 O (54.0:67.0:67.0) (54.0:67.0:67.0))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "LUT4")
+  (INSTANCE signal_generator0/v_clk_done_i_1)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I3 O (45.0:56.0:56.0) (45.0:56.0:56.0))
+      (IOPATH I2 O (52.0:65.0:65.0) (52.0:65.0:65.0))
+      (IOPATH I1 O (54.0:67.0:67.0) (54.0:67.0:67.0))
+      (IOPATH I0 O (51.0:64.0:64.0) (51.0:64.0:64.0))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE signal_generator0/v_clk_done_reg)
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "LUT1")
+  (INSTANCE signal_generator0/v_clk_en_i_1)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I0 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE signal_generator0/v_clk_en_reg)
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+  (CELLTYPE "LUT3")
+  (INSTANCE signal_generator0/v_clk_read_address_i_1)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I2 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+      (IOPATH I1 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+      (IOPATH I0 O (42.0:53.0:53.0) (42.0:53.0:53.0))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "FDCE")
+  (INSTANCE signal_generator0/v_clk_read_address_reg)
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH (posedge CLR) Q (383.0:478.0:478.0))
+      (IOPATH C Q (158.0:197.0:197.0) (158.0:197.0:197.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (SETUPHOLD (negedge CE) (posedge C) (146.0:183.0:183.0) (31.0:31.0:31.0))
+      (RECREM (negedge CLR) (posedge C) (202.0:252.0:252.0) (-172.0:-172.0:-172.0))
+      (SETUPHOLD (posedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+      (SETUPHOLD (negedge D) (posedge C) (-41.0:-36.0:-36.0) (191.0:191.0:191.0))
+    )
+)
+(CELL 
+    (CELLTYPE "project_reti_logiche")
+    (INSTANCE )
+    (DELAY
+      (ABSOLUTE
+      (INTERCONNECT i_clk_IBUF_BUFG_inst/O signal_generator0/FSM_sequential_state_reg\[0\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT i_clk_IBUF_BUFG_inst/O signal_generator0/FSM_sequential_state_reg\[1\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT i_clk_IBUF_BUFG_inst/O signal_generator0/FSM_sequential_state_reg\[2\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT i_clk_IBUF_BUFG_inst/O signal_generator0/v_clk_done_reg/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT i_clk_IBUF_BUFG_inst/O signal_generator0/v_clk_en_reg/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT i_clk_IBUF_BUFG_inst/O signal_generator0/v_clk_read_address_reg/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT i_clk_IBUF_inst/O i_clk_IBUF_BUFG_inst/I (554.4:583.6:583.6) (554.4:583.6:583.6))
+      (INTERCONNECT i_clk_IBUF_inst/O signal_generator0/o_done_OBUF_inst_i_1/I1 (554.4:583.6:583.6) (554.4:583.6:583.6))
+      (INTERCONNECT i_clk_IBUF_inst/O signal_generator0/t_output\[15\]_i_1/I1 (554.4:583.6:583.6) (554.4:583.6:583.6))
+      (INTERCONNECT i_clk_IBUF_inst/O signal_generator0/t_output\[15\]_i_2/I1 (554.4:583.6:583.6) (554.4:583.6:583.6))
+      (INTERCONNECT i_rst_IBUF_inst/O signal_generator0/FSM_sequential_state_reg\[0\]/CLR (603.4:644.6:644.6) (603.4:644.6:644.6))
+      (INTERCONNECT i_rst_IBUF_inst/O signal_generator0/FSM_sequential_state_reg\[1\]/CLR (603.4:644.6:644.6) (603.4:644.6:644.6))
+      (INTERCONNECT i_rst_IBUF_inst/O signal_generator0/FSM_sequential_state_reg\[2\]/CLR (603.4:644.6:644.6) (603.4:644.6:644.6))
+      (INTERCONNECT i_rst_IBUF_inst/O signal_generator0/v_clk_done_reg/CLR (603.4:644.6:644.6) (603.4:644.6:644.6))
+      (INTERCONNECT i_rst_IBUF_inst/O signal_generator0/v_clk_en_reg/CLR (603.4:644.6:644.6) (603.4:644.6:644.6))
+      (INTERCONNECT i_rst_IBUF_inst/O signal_generator0/v_clk_read_address_reg/CLR (603.4:644.6:644.6) (603.4:644.6:644.6))
+      (INTERCONNECT i_rst_IBUF_inst/O signal_generator0/t_output\[15\]_i_2/I0 (554.4:583.6:583.6) (554.4:583.6:583.6))
+      (INTERCONNECT i_start_IBUF_inst/O signal_generator0/v_clk_read_address_reg/D (650.4:703.6:703.6) (650.4:703.6:703.6))
+      (INTERCONNECT i_start_IBUF_inst/O signal_generator0/__1\/i_/I2 (554.4:583.6:583.6) (554.4:583.6:583.6))
+      (INTERCONNECT i_start_IBUF_inst/O signal_generator0/FSM_sequential_state\[0\]_i_1/I3 (554.4:583.6:583.6) (554.4:583.6:583.6))
+      (INTERCONNECT i_start_IBUF_inst/O signal_generator0/FSM_sequential_state\[1\]_i_1/I3 (554.4:583.6:583.6) (554.4:583.6:583.6))
+      (INTERCONNECT i_w_IBUF_inst/O serial_to_parallel_address/t_output_reg\[0\]/D (650.4:703.6:703.6) (650.4:703.6:703.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[0\]/Q o_mem_addr_OBUF\[0\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[0\]/Q serial_to_parallel_address/t_output_reg\[1\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[10\]/Q o_mem_addr_OBUF\[10\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[10\]/Q serial_to_parallel_address/t_output_reg\[11\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[11\]/Q o_mem_addr_OBUF\[11\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[11\]/Q serial_to_parallel_address/t_output_reg\[12\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[12\]/Q o_mem_addr_OBUF\[12\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[12\]/Q serial_to_parallel_address/t_output_reg\[13\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[13\]/Q o_mem_addr_OBUF\[13\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[13\]/Q serial_to_parallel_address/t_output_reg\[14\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[14\]/Q o_mem_addr_OBUF\[14\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[14\]/Q serial_to_parallel_address/t_output_reg\[15\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[15\]/Q o_mem_addr_OBUF\[15\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[1\]/Q o_mem_addr_OBUF\[1\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[1\]/Q serial_to_parallel_address/t_output_reg\[2\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[2\]/Q o_mem_addr_OBUF\[2\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[2\]/Q serial_to_parallel_address/t_output_reg\[3\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[3\]/Q o_mem_addr_OBUF\[3\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[3\]/Q serial_to_parallel_address/t_output_reg\[4\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[4\]/Q o_mem_addr_OBUF\[4\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[4\]/Q serial_to_parallel_address/t_output_reg\[5\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[5\]/Q o_mem_addr_OBUF\[5\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[5\]/Q serial_to_parallel_address/t_output_reg\[6\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[6\]/Q o_mem_addr_OBUF\[6\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[6\]/Q serial_to_parallel_address/t_output_reg\[7\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[7\]/Q o_mem_addr_OBUF\[7\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[7\]/Q serial_to_parallel_address/t_output_reg\[8\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[8\]/Q o_mem_addr_OBUF\[8\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[8\]/Q serial_to_parallel_address/t_output_reg\[9\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[9\]/Q o_mem_addr_OBUF\[9\]_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT serial_to_parallel_address/t_output_reg\[9\]/Q serial_to_parallel_address/t_output_reg\[10\]/D (412.9:470.0:470.0) (412.9:470.0:470.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state\[0\]_i_1/O signal_generator0/FSM_sequential_state_reg\[0\]/D (45.0:57.0:57.0) (45.0:57.0:57.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state\[1\]_i_1/O signal_generator0/FSM_sequential_state_reg\[1\]/D (45.0:57.0:57.0) (45.0:57.0:57.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state\[2\]_i_1/O signal_generator0/FSM_sequential_state_reg\[2\]/D (45.0:57.0:57.0) (45.0:57.0:57.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[0\]/Q signal_generator0/FSM_sequential_state\[0\]_i_1/I0 (514.2:556.0:556.0) (514.2:556.0:556.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[0\]/Q signal_generator0/FSM_sequential_state\[1\]_i_1/I0 (514.2:556.0:556.0) (514.2:556.0:556.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[0\]/Q signal_generator0/FSM_sequential_state\[2\]_i_1/I0 (586.4:632.0:632.0) (586.4:632.0:632.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[0\]/Q signal_generator0/v_clk_en_i_1/I0 (310.9:342.0:342.0) (310.9:342.0:342.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[0\]/Q signal_generator0/__1\/i_/I1 (586.4:632.0:632.0) (586.4:632.0:632.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[0\]/Q signal_generator0/v_clk_done_i_1/I2 (413.5:450.0:450.0) (413.5:450.0:450.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[0\]/Q signal_generator0/v_clk_read_address_i_1/I2 (310.9:342.0:342.0) (310.9:342.0:342.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[1\]/Q signal_generator0/v_clk_done_i_1/I0 (514.2:556.0:556.0) (514.2:556.0:556.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[1\]/Q signal_generator0/v_clk_read_address_i_1/I0 (586.4:632.0:632.0) (586.4:632.0:632.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[1\]/Q signal_generator0/FSM_sequential_state\[0\]_i_1/I1 (586.4:632.0:632.0) (586.4:632.0:632.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[1\]/Q signal_generator0/FSM_sequential_state\[1\]_i_1/I1 (586.4:632.0:632.0) (586.4:632.0:632.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[1\]/Q signal_generator0/FSM_sequential_state\[2\]_i_1/I1 (413.5:450.0:450.0) (413.5:450.0:450.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[1\]/Q signal_generator0/__1\/i_/I3 (310.9:342.0:342.0) (310.9:342.0:342.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[2\]/Q signal_generator0/__1\/i_/I0 (514.2:556.0:556.0) (514.2:556.0:556.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[2\]/Q signal_generator0/v_clk_done_i_1/I1 (586.4:632.0:632.0) (586.4:632.0:632.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[2\]/Q signal_generator0/v_clk_read_address_i_1/I1 (413.5:450.0:450.0) (413.5:450.0:450.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[2\]/Q signal_generator0/FSM_sequential_state\[0\]_i_1/I2 (413.5:450.0:450.0) (413.5:450.0:450.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[2\]/Q signal_generator0/FSM_sequential_state\[1\]_i_1/I2 (413.5:450.0:450.0) (413.5:450.0:450.0))
+      (INTERCONNECT signal_generator0/FSM_sequential_state_reg\[2\]/Q signal_generator0/FSM_sequential_state\[2\]_i_1/I2 (310.9:342.0:342.0) (310.9:342.0:342.0))
+      (INTERCONNECT signal_generator0/__1\/i_/O signal_generator0/v_clk_en_reg/CE (421.8:462.0:462.0) (421.8:462.0:462.0))
+      (INTERCONNECT signal_generator0/o_done_OBUF_inst_i_1/O o_done_OBUF_inst/I (554.4:583.6:583.6) (554.4:583.6:583.6))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[0\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[10\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[11\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[12\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[13\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[14\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[15\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[1\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[2\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[3\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[4\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[5\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[6\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[7\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[8\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_1/O serial_to_parallel_address/t_output_reg\[9\]/C (439.0:584.0:584.0) (439.0:584.0:584.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[0\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[10\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[11\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[12\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[13\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[14\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[15\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[1\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[2\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[3\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[4\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[5\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[6\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[7\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[8\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/t_output\[15\]_i_2/O serial_to_parallel_address/t_output_reg\[9\]/CLR (618.2:661.0:661.0) (618.2:661.0:661.0))
+      (INTERCONNECT signal_generator0/v_clk_done_i_1/O signal_generator0/v_clk_done_reg/D (45.0:57.0:57.0) (45.0:57.0:57.0))
+      (INTERCONNECT signal_generator0/v_clk_done_reg/Q signal_generator0/o_done_OBUF_inst_i_1/I0 (413.5:450.0:450.0) (413.5:450.0:450.0))
+      (INTERCONNECT signal_generator0/v_clk_done_reg/Q signal_generator0/t_output\[15\]_i_2/I2 (310.9:342.0:342.0) (310.9:342.0:342.0))
+      (INTERCONNECT signal_generator0/v_clk_done_reg/Q signal_generator0/v_clk_done_i_1/I3 (310.9:342.0:342.0) (310.9:342.0:342.0))
+      (INTERCONNECT signal_generator0/v_clk_en_i_1/O signal_generator0/v_clk_en_reg/D (45.0:57.0:57.0) (45.0:57.0:57.0))
+      (INTERCONNECT signal_generator0/v_clk_en_reg/Q o_mem_en_OBUF_inst/I (638.4:688.6:688.6) (638.4:688.6:688.6))
+      (INTERCONNECT signal_generator0/v_clk_read_address_i_1/O signal_generator0/v_clk_read_address_reg/CE (421.8:462.0:462.0) (421.8:462.0:462.0))
+      (INTERCONNECT signal_generator0/v_clk_read_address_reg/Q signal_generator0/t_output\[15\]_i_1/I0 (413.5:450.0:450.0) (413.5:450.0:450.0))
+      )
+    )
+)
+)
