@@ -1,4 +1,0 @@
-Time resolution is 1 ps
-Failure: TEST FALLITO (Z2 ---) found 0
-Time: 1350100 ps  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche.srcs/sim_1/imports/Desktop/tb_example23.vhd
-$finish called at time : 1350100 ps : File "C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche.srcs/sim_1/imports/Desktop/tb_example23.vhd" Line 138
