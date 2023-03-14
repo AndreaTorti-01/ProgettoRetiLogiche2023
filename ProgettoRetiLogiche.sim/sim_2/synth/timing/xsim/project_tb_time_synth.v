@@ -1,7 +1,7 @@
 // Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2.2 (win64) Build 3788238 Tue Feb 21 20:00:34 MST 2023
-// Date        : Tue Mar 14 14:33:04 2023
+// Date        : Tue Mar 14 15:07:35 2023
 // Host        : AndreaPCMobile running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file
 //               C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche.sim/sim_2/synth/timing/xsim/project_tb_time_synth.v
