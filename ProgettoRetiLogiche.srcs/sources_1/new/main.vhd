@@ -21,7 +21,7 @@ ENTITY project_reti_logiche IS
 END project_reti_logiche;
 
 ARCHITECTURE behavioral OF project_reti_logiche IS
-    TYPE state_type IS (a, b, c, clk_wait, d, e);
+    TYPE state_type IS (a, b, c, d);
     SIGNAL state : state_type;
     SIGNAL out_port : STD_LOGIC_VECTOR(1 DOWNTO 0);
     SIGNAL t_address : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -59,44 +59,55 @@ BEGIN
                     o_z3 <= (OTHERS => '0');
                     o_done <= '0';
                     IF i_start = '1' THEN
-                        state <= b;
                         out_port <= out_port (0) & i_w;
+                        state <= b;
                     END IF;
                 WHEN b =>
                     IF i_start = '1' THEN
-                        state <= c;
                         out_port <= out_port (0) & i_w;
                         t_address <= (OTHERS => '0');
+                        o_mem_en <= '1';
+                        state <= c;
                     END IF;
                 WHEN c =>
                     IF i_start = '1' THEN
                         o_mem_addr <= t_address (14 DOWNTO 0) & i_w;
                         t_address <= t_address (14 DOWNTO 0) & i_w;
                     ELSE
-                        o_mem_en <= '1';
-                        state <= clk_wait;
+                        o_mem_en <= '0';
+                        state <= d;
                     END IF;
-                WHEN clk_wait =>
-                    o_mem_en <= '0';
-                    state <= d;
-                WHEN d =>
-                    state <= e;
+                WHEN d => -- aspetta un ciclo per dare il done, per prendersi il tempo di stabilizzare l'uscita e considerare tempi di risposta variabili dalla memoria
                     CASE out_port IS
                         WHEN "00" =>
                             t_z0 <= i_mem_data;
+
+                            o_z0 <= i_mem_data;
+                            o_z1 <= t_z1;
+                            o_z2 <= t_z2;
+                            o_z3 <= t_z3;
                         WHEN "01" =>
                             t_z1 <= i_mem_data;
+
+                            o_z0 <= t_z0;
+                            o_z1 <= i_mem_data;
+                            o_z2 <= t_z2;
+                            o_z3 <= t_z3;
                         WHEN "10" =>
                             t_z2 <= i_mem_data;
-                        WHEN "11" =>
+
+                            o_z0 <= t_z0;
+                            o_z1 <= t_z1;
+                            o_z2 <= i_mem_data;
+                            o_z3 <= t_z3;
+                        WHEN OTHERS =>  -- "11"
                             t_z3 <= i_mem_data;
-                        WHEN OTHERS => NULL;
+
+                            o_z0 <= t_z0;
+                            o_z1 <= t_z1;
+                            o_z2 <= t_z2;
+                            o_z3 <= i_mem_data;
                     END CASE;
-                WHEN e =>
-                    o_z0 <= t_z0;
-                    o_z1 <= t_z1;
-                    o_z2 <= t_z2;
-                    o_z3 <= t_z3;
                     o_done <= '1';
                     state <= a;
                 WHEN OTHERS => NULL;
