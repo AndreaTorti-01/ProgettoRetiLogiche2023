@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../ProgettoRetiLogiche.srcs/sources_1/new/main.vhd" \
-"../../../../ProgettoRetiLogiche.srcs/sim_1/imports/Desktop/tb_example23.vhd" \
-
-# Do not sort compile order
-nosort
