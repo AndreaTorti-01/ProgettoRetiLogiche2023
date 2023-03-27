@@ -2,8 +2,8 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Sat Mar 25 15:37:10 2023
-# Process ID: 5356
+# Start of session at: Mon Mar 27 13:04:14 2023
+# Process ID: 5416
 # Current directory: C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche2023.runs/synth_1
 # Command line: vivado.exe -log project_reti_logiche.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source project_reti_logiche.tcl
 # Log file: C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche2023.runs/synth_1/project_reti_logiche.vds

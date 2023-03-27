@@ -1,5 +1,5 @@
 Vivado Simulator 2016.4
 Time resolution is 1 ps
 Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
-Time: 3600100 ps  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche2023.srcs/sim_1/imports/testbenches/tb_example23.vhd
-$finish called at time : 3600100 ps : File "C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche2023.srcs/sim_1/imports/testbenches/tb_example23.vhd" Line 153
+Time: 32300100 ps  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche2023.srcs/sim_1/imports/testbenches/tb_2.vhd
+$finish called at time : 32300100 ps : File "C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche2023.srcs/sim_1/imports/testbenches/tb_2.vhd" Line 342

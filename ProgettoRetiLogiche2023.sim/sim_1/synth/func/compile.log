@@ -2,6 +2,6 @@ INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/andre/Coding/ProgettoRetiLogic
 INFO: [VRFC 10-307] analyzing entity project_reti_logiche
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche2023.srcs/sim_1/imports/testbenches/tb_1.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity project_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche2023.srcs/sim_1/imports/testbenches/tb_example23.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche2023.srcs/sim_1/imports/testbenches/tb_2.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity project_tb
-WARNING: [VRFC 10-1194] overwriting existing secondary unit projecttb [C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche2023.srcs/sim_1/imports/testbenches/tb_example23.vhd:13]
+WARNING: [VRFC 10-1194] overwriting existing secondary unit projecttb [C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche2023.srcs/sim_1/imports/testbenches/tb_2.vhd:12]
