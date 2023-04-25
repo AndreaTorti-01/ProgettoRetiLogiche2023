@@ -1,8 +1,8 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
--- Date        : Mon Mar 27 13:12:27 2023
--- Host        : AndreaPCMobile running 64-bit major release  (build 9200)
+-- Date        : Tue Apr 25 22:23:57 2023
+-- Host        : AndreaPC running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -mode funcsim -nolib -force -file
 --               C:/Users/andre/Coding/ProgettoRetiLogiche2023/ProgettoRetiLogiche2023.sim/sim_1/synth/func/project_tb_func_synth.vhd
 -- Design      : project_reti_logiche
@@ -728,10 +728,11 @@ o_mem_en_reg: unisim.vcomponents.FDCE
       D => o_mem_en_i_2_n_0,
       Q => o_mem_en_OBUF
     );
-o_mem_we_OBUF_inst: unisim.vcomponents.OBUF
+o_mem_we_OBUF_inst: unisim.vcomponents.OBUFT
      port map (
       I => '0',
-      O => o_mem_we
+      O => o_mem_we,
+      T => '1'
     );
 \o_z0[0]_i_1\: unisim.vcomponents.LUT5
     generic map(

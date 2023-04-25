@@ -7,15 +7,15 @@ ENTITY project_reti_logiche IS
         i_rst : IN STD_LOGIC;
         i_start : IN STD_LOGIC;
         i_w : IN STD_LOGIC;
-        o_z0 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
-        o_z1 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
-        o_z2 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
-        o_z3 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
-        o_done : OUT STD_LOGIC := '0';
-        o_mem_addr : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) := (OTHERS => '0');
+        o_z0 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        o_z1 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        o_z2 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        o_z3 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        o_done : OUT STD_LOGIC;
+        o_mem_addr : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         i_mem_data : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        o_mem_we : OUT STD_LOGIC := '0';
-        o_mem_en : OUT STD_LOGIC := '0'
+        o_mem_we : OUT STD_LOGIC;
+        o_mem_en : OUT STD_LOGIC
     );
 END project_reti_logiche;
 

@@ -1,7 +1,7 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  "project_tb_func_synth.vhd"
 vhdl xil_defaultlib  "../../../../ProgettoRetiLogiche2023.srcs/sim_1/imports/testbenches/tb_1.vhd"
-vhdl xil_defaultlib  "../../../../ProgettoRetiLogiche2023.srcs/sim_1/imports/testbenches/tb_2.vhd"
+vhdl xil_defaultlib  "../../../../ProgettoRetiLogiche2023.srcs/sim_1/imports/testbenches/tb_6.vhd"
 
 # Do not sort compile order
 nosort
