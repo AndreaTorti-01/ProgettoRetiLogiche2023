@@ -50,6 +50,7 @@ BEGIN
             t_z3 <= (OTHERS => '0');
 
         ELSIF (rising_edge(i_clk)) THEN
+            o_mem_we <= '0'; -- disabilito la scrittura sulla memoria
             CASE state IS
                 WHEN a =>
                     o_mem_addr <= (OTHERS => '0'); -- reset delle uscite
